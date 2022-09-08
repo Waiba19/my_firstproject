@@ -3,7 +3,7 @@ import './Todo.css'
 
 const Todo = () => {
     const [input, setInput] = useState('');
-    const[todos, setTodos] = useState(JSON.parse(localStorage.getItem));
+    const[todos, setTodos] = useState(JSON.parse(localStorage.getItem('todos')) || []);
 
     // const [todos, setTodos] = useState([
     //     'Take a walk.',
@@ -12,16 +12,16 @@ const Todo = () => {
     //     'Feed the dog.'
     // ]);
 
-    //local storage setup 
-    const getLocalTodos = () =>{
-        if(localStorage.getItem('todos')== null) {
-            localStorage.setitem('todos', JSON.stringify([]));
-        }else{
-            let todoLocal = JSON.parse(localStorage.getItem('todos'));
-            setTodos(todoLocal);
-        }
+    // //local storage setup 
+    // const getLocalTodos = () =>{
+    //     if(localStorage.getItem('todos')== null) {
+    //         localStorage.setitem('todos', JSON.stringify([]));
+    //     }else{
+    //         let todoLocal = JSON.parse(localStorage.getItem('todos'));
+    //         setTodos(todoLocal);
+    //     }
 
-    }
+    // }
 // set items to localStorage
 const saveLocalTodos = (todo) => {
     // check if there is already items in localStorage
